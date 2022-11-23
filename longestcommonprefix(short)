@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include<math.h>
+int main()
+{
+    char st[4][256];
+    int num[4];
+    for (int i = 0; i < 4; i++)
+    {
+        gets(st[i]);
+        num[i] = strlen(st[i]);
+    }
+    int size =(int)fmax(fmax(num[0],num[1]),fmax(num[2],num[3]));
+    for (int i = 0; i < size; i++)
+    {
+        if (st[0][i] == st[1][i] && st[0][i] == st[2][i] && st[0][i] == st[3][i])
+        {
+           continue;
+        }
+        else
+        {
+            st[0][i]='\0';
+            break;
+        }
+    }
+    printf("%s",st[0]);
+}
